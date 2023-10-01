@@ -1,0 +1,38 @@
+form {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  cursor:pointer;
+  padding: 10px 20px;
+  width: 180px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  border:5px solid #353536;
+  background: #67c5ff;
+  box-shadow: 0 0 15px 5px #182f3d inset;  
+  color: white;
+}
+
+form button:hover {  
+    transition: .5s;
+    background: #67c5ff;
+    box-shadow: 0 0 15px 5px #67c5ff inset;
+}
+
+
+form label {
+  display: flex;
+  flex-direction: row;
+}

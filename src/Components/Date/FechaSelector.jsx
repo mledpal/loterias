@@ -1,6 +1,6 @@
 import "./Date.css";
 import { iconoFecha } from "/src/variables.js";
-import { Start, Stop } from "./Icons";
+import { Start, Stop } from "../../helpers/Icons";
 import { useRef } from "react";
 import { getToday } from "/src/helpers/getToday";
 

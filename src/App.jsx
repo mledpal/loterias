@@ -1,3 +1,4 @@
+import { Formulario } from "./Components";
 import { Filtro } from "./Components/Filtro/Filtro";
 
 export const App = () => {
@@ -10,27 +11,11 @@ export const App = () => {
 
 			<aside>
 				<Filtro />
+				<Formulario />
 			</aside>
 
 			<main>
-				<form action=''>
-					<label for='numeros'>
-						Números
-						<input name='nums' id='nums' type='number' value='6' required />
-					</label>
-					<label for='otros'>
-						Otros
-						<input name='otros' id='otros' type='number' value='2' required />
-					</label>
-					<button type='button' id='actualizar'>
-						Actualizar
-					</button>
-				</form>
-
-				<div class='numeros'>
-					<div id='numeros'></div>
-					<div id='estrellas'></div>
-				</div>
+				<h2>Resultados</h2>
 			</main>
 
 			<footer>
