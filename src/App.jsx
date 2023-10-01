@@ -1,16 +1,16 @@
 import { Formulario } from "./Components";
 import { Filtro } from "./Components/Filtro/Filtro";
+import { obtenerDatos } from "./helpers/getData";
 
 export const App = () => {
 	return (
 		<>
 			<header>
 				<h1>LotoGenerator</h1>
-				<hr />
 			</header>
 
 			<aside>
-				<Filtro />
+				<Filtro obtenerDatos={obtenerDatos} />
 				<Formulario />
 			</aside>
 

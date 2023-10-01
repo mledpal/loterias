@@ -1,20 +1,15 @@
 import { Numbers, Otros } from "../../helpers/Icons";
+import { InputBox } from "../InputBox/InputBox";
 import "./Formulario.css";
 
 export const Formulario = () => {
 	return (
 		<>
 			<form action=''>
-				<label for='numeros'>
-					<Numbers />
-					<input name='nums' id='nums' type='number' value='6' required />
-				</label>
-				<label for='otros'>
-					<Otros />
-					<input name='otros' id='otros' type='number' value='2' required />
-				</label>
+				<InputBox tipo='C' valor={6} />
+				<InputBox tipo='R' max={2} valor={2} />
 				<button type='button' id='actualizar'>
-					Actualizar
+					Generar
 				</button>
 			</form>
 		</>
