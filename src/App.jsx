@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Formulario } from "./Components";
 import { Filtro } from "./Components/Filtro/Filtro";
 import { obtenerDatos } from "./helpers/getData";
+import { MostrarResultados } from "./Components/MostrarResultados/MostrarResultados";
 
 export const App = () => {
+	const [combinacion, setCombinacion] = useState([]);
+
 	return (
 		<>
 			<header>
@@ -10,12 +14,13 @@ export const App = () => {
 			</header>
 
 			<aside>
+				<Formulario setCombinacion={setCombinacion} />
 				<Filtro obtenerDatos={obtenerDatos} />
-				<Formulario />
 			</aside>
 
 			<main>
 				<h2>Resultados</h2>
+				<MostrarResultados combinacion={combinacion} />
 			</main>
 
 			<footer>
