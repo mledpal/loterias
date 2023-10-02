@@ -3,11 +3,11 @@ import { CheckBox, FechaSelector } from "..";
 import "./Filtro.css";
 
 export const Filtro = ({ obtenerDatos }) => {
-	const [enabled, setEnabled] = useState(true);
+	const [filter, setFilter] = useState(false);
 
 	return (
 		<>
-			<CheckBox enabled={enabled} setEnabled={setEnabled} />
+			<CheckBox filter={filter} setFilter={setFilter} />
 			<FechaSelector tipo='Start' />
 			<FechaSelector tipo='Stop' />
 
@@ -17,7 +17,7 @@ export const Filtro = ({ obtenerDatos }) => {
 				onClick={() => {
 					obtenerDatos();
 				}}
-				disabled={enabled ? "" : "disabled"}
+				disabled={filter ? "" : "disabled"}
 			>
 				Obtener
 			</button>

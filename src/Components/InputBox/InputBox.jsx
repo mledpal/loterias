@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Numbers, Otros } from "../../helpers/Icons";
 
-export const InputBox = ({ valor = 6, min = 1, max = 6, tipo }) => {
-	const [value, setValue] = useState(valor);
+export const InputBox = ({ valor = 6, min = 1, max = 6, tipo, setValor }) => {
 	const inputRef = useRef();
 
 	return (
@@ -10,12 +9,12 @@ export const InputBox = ({ valor = 6, min = 1, max = 6, tipo }) => {
 			{tipo === "C" ? <Numbers /> : <Otros />}
 			<input
 				type='number'
-				value={value}
+				value={valor}
 				min={min}
 				max={max}
 				ref={inputRef}
 				onChange={() => {
-					setValue(inputRef.current.value);
+					setValor(inputRef.current.value);
 				}}
 				required
 			/>

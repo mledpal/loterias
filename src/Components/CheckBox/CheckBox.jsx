@@ -1,14 +1,14 @@
 import "./CheckBox.css";
-export const CheckBox = ({ enabled, setEnabled }) => {
+export const CheckBox = ({ filter, setFilter }) => {
 	return (
 		<label htmlFor='chkFilter'>
 			<input
 				type='checkbox'
 				name='chkFilter'
 				onChange={() => {
-					setEnabled(!enabled);
+					setFilter(!filter);
 				}}
-				checked={enabled ? "checked" : ""}
+				checked={filter ? "checked" : ""}
 			/>
 		</label>
 	);
