@@ -1,3 +1,3 @@
-export const Bola = ({ num }) => {
-	return <div className='bola'>{num}</div>;
+export const Bola = ({ num, tipo }) => {
+	return <div className={tipo}>{num}</div>;
 };

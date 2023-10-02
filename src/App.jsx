@@ -19,7 +19,6 @@ export const App = () => {
 			</aside>
 
 			<main>
-				<h2>Resultados</h2>
 				<MostrarResultados combinacion={combinacion} />
 			</main>
 

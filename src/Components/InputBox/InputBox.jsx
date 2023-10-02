@@ -8,6 +8,7 @@ export const InputBox = ({ valor = 6, min = 1, max = 6, tipo, setValor }) => {
 		<label>
 			{tipo === "C" ? <Numbers /> : <Otros />}
 			<input
+				className='inpNumber'
 				type='number'
 				value={valor}
 				min={min}

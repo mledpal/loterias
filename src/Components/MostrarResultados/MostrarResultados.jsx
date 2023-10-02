@@ -6,17 +6,21 @@ export const MostrarResultados = ({ combinacion }) => {
 			<div className='bolasContainer'>
 				<div className='numeros'>
 					{combinacion[0].map((num) => {
-						return <Bola key={num} num={num} />;
+						return <Bola key={num} num={num} tipo='bola N' />;
 					})}
 				</div>
 				<div className='estrellas'>
 					{combinacion[1].map((num) => {
-						return <Bola key={num} num={num} />;
+						return <Bola key={num} num={num} tipo='bola E' />;
 					})}
 				</div>
 			</div>
 		);
 	} else {
-		return <h3>No hay datos</h3>;
+		return (
+			<h3>
+				Pulse en <span>Generar</span> para empezar
+			</h3>
+		);
 	}
 };

@@ -1,3 +1,8 @@
+h3 span {
+  color: red;
+  font-weight: 600;
+}
+
 div.bolasContainer {
   display:flex;
   flex-direction: row;
@@ -5,6 +10,7 @@ div.bolasContainer {
   justify-content: center;
   padding: 20px;
 }
+
 div.estrellas,
 div.numeros {
   width: 100%;
@@ -13,8 +19,17 @@ div.numeros {
   margin: 25px;
 }
 
-div.bola {
+
+div.bola.N {
   background-image: radial-gradient(closest-side at 65% 20%, white, #888 , #333, #222, black);
+}
+
+div.bola.E {
+  background-image: radial-gradient(closest-side at 65% 20%, red, #c50000 , #6b0000, #3d0000, black);
+}
+
+div.bola {
+  
   display: inline-block;
   padding: 10px;
   margin: 5px;
