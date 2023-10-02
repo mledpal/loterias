@@ -7,18 +7,15 @@ const fecha_fin = 20231001;
 
 const URL = `https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=${sorteo}&celebrados=true&fechaInicioInclusiva=${fecha_inicio}&fechaFinInclusiva=${fecha_fin}`;
 
-export const obtenerDatos = async () => {
-	fetch(URL, {
-		headers: {
-			"Access-Control-Allow-Headers": "Content-Type",
-			"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "*",
-			"Access-Control-Allow-Headers": "Content-Type",
-		},
-		origin: "http://localhost",
+const URL2 = "https://ledemar.ddns.net/loterias/getdata.php";
+
+export const obtenerDatos = () => {
+	fetch(URL2, {
+		method: "GET",
 	})
 		.then((response) => response.json())
 		.then((data) => {
+			console.log(data);
 			data.forEach((sorteo) => {
 				const id = sorteo.id_sorteo;
 				const fecha = sorteo.fecha_sorteo;
