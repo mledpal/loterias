@@ -5,12 +5,12 @@ const sorteo = SORTEOS.PRIMITIVA;
 const fecha_inicio = 20230930;
 const fecha_fin = 20231001;
 
-const URL = `https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=${sorteo}&celebrados=true&fechaInicioInclusiva=${fecha_inicio}&fechaFinInclusiva=${fecha_fin}`;
+// const URL = `https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=${sorteo}&celebrados=true&fechaInicioInclusiva=${fecha_inicio}&fechaFinInclusiva=${fecha_fin}`;
 
-const URL2 = "https://ledemar.ddns.net/loterias/getdata.php";
+const url = `https://ledemar.ddns.net/loterias/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
 
 export const obtenerDatos = () => {
-	fetch(URL2, {
+	fetch(url, {
 		method: "GET",
 	})
 		.then((response) => response.json())
