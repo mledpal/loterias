@@ -1,52 +1,47 @@
-import { SORTEOS } from "/src/variables.js";
+import { date2Number } from "./handleDates";
 
-const sorteo = SORTEOS.PRIMITIVA;
+export const obtenerDatos = (fechas, sorteo) => {
+	let resultado = [];
 
-const fecha_inicio = 20230930;
-const fecha_fin = 20231001;
+	const fecha_inicio = date2Number(fechas["Start"]);
+	const fecha_fin = date2Number(fechas["Stop"]);
 
-// const URL = `https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=${sorteo}&celebrados=true&fechaInicioInclusiva=${fecha_inicio}&fechaFinInclusiva=${fecha_fin}`;
+	const url = `https://ledemar.ddns.net/loterias/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
 
-const url = `https://ledemar.ddns.net/loterias/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
-
-export const obtenerDatos = () => {
 	fetch(url, {
 		method: "GET",
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
-			data.forEach((sorteo) => {
+			data.map((sorteo) => {
 				const id = sorteo.id_sorteo;
-				const fecha = sorteo.fecha_sorteo;
-				const resultado = convertir(id, fecha, sorteo.combinacion);
-				console.log(resultado);
+				const fecha = sorteo.fecha_sorteo.split(" ")[0];
+				const juego = sorteo.game_id;
+				const combinacion = convertir(sorteo.combinacion);
+
+				resultado.push({ id, juego, fecha, combinacion });
 			});
 		})
 		.catch((err) => {
 			console.error("caught it!", err);
 		});
+
+	return resultado;
 };
 
-const convertir = (id, fecha, combi) => {
-	const numeros = combi.replaceAll("-", " ").replaceAll("  ", "").split(" ");
-	const complementario = parseInt(numeros.splice(6, 1)[0].slice(2, 4));
-	const reintegro = parseInt(numeros.splice(6, 1)[0].slice(2, 3));
+const convertir = (combi) => {
+	console.log(combi);
+	const numeros = combi
+		.trim()
+		.replaceAll("-", " ")
+		.replaceAll("  ", "")
+		.split(" ");
 
 	const combinacion = numeros.map((n) => {
+		if (n.charAt(0) == "C") return parseInt(n.slice(2, 4));
+		if (n.charAt(0) == "R") return parseInt(n.slice(2, 3));
 		return parseInt(n);
 	});
 
-	const max = Math.max(...combinacion);
-	const min = Math.min(...combinacion);
-	const suma = combinacion.reduce((suma, c) => suma + c);
-	const media = Math.round(suma / combinacion.length);
-
-	return {
-		id,
-		fecha,
-		combinacion,
-		complementario,
-		reintegro,
-	};
+	return combinacion;
 };
