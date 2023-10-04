@@ -2,8 +2,7 @@ button[id="btnFetch"]{
   margin: 5px auto;
   padding: 10px 20px;
   width: 180px;
-  height: 50px;
-  border: none;
+  height: 50px;  
   outline: none;
   border-radius: 25px;
   border:5px solid #353536;
@@ -14,6 +13,8 @@ button[id="btnFetch"]{
   color: rgba(255,255,255, .5);  
 }
 
+input[type="date"]:enabled:hover,
+select:enabled:hover,
 button[id="btnFetch"]:enabled:hover {  
     transition: .5s;
     cursor:pointer;  
@@ -22,6 +23,8 @@ button[id="btnFetch"]:enabled:hover {
     box-shadow: 0 0 15px 5px #84ccf8 inset;
 }
 
+input[type="date"]:disabled,
+select:disabled,
 button[id="btnFetch"]:disabled {
   background:#203847; ;
 }
