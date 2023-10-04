@@ -4,6 +4,7 @@ import {
 	Filtro,
 	MostrarResultados,
 	MostrarFiltrados,
+	Cabecera,
 } from "./Components";
 
 export const App = () => {
@@ -14,7 +15,7 @@ export const App = () => {
 	return (
 		<>
 			<header>
-				<h1>Header</h1>
+				<Cabecera />
 			</header>
 
 			<aside>
@@ -39,6 +40,11 @@ export const App = () => {
 
 			<footer>
 				<p>Miguel Ledesma Palacios</p>
+				<p>
+					<a href='https://github.com/mledpal/loterias' target='_new'>
+						Proyecto en GitHub
+					</a>
+				</p>
 				<p>2023</p>
 			</footer>
 		</>

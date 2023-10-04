@@ -1,4 +1,5 @@
 export { Bola } from "./Bola/Bola";
+export { Cabecera } from "./Cabecera/Cabecera";
 export { CheckBox } from "./CheckBox/CheckBox";
 export { FechaSelector } from "./Date/FechaSelector";
 export { Filtro } from "./Filtro/Filtro";

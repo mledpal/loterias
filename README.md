@@ -14,5 +14,5 @@ Si quieres evitar que genere números que ya han salido en sorteos anteriores,
 activa el filtro y selecciona el rango de fechas cuyos sorteos quieras añadir al filtro
 
 
-
+*Queda pendiente la captura de errores*
 

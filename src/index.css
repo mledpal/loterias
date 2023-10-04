@@ -26,16 +26,23 @@ body #root {
 }
 
 header {
+  padding: 10px;
   grid-area: header;
   display: grid;
   place-items: center;
   height: 150px;
   width: 100%;
   top: 0;      
+  background: #1a1b1b;
+  
 }
 
+header,
+#root > footer,
 aside,
 main {
+  border-radius: 25px;
+  border: 5px solid black;
   box-shadow: 3px 0 10px 3px rgba(0,0,0,.7) inset, -3px 3px 5px 0px #949999 inset;
 }
 
@@ -48,8 +55,7 @@ aside {
   width: 300px;
   background: #242525;
   border-radius: 25px;
-  padding: 10px;
-  border:5px solid #0a0a0a;  
+  padding: 10px;  
 }
 
 main {  
@@ -65,8 +71,7 @@ main {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;  
-  border-radius: 25px;
-  border: 5px solid black;  
+  border-radius: 25px;  
 }
 
 
@@ -100,6 +105,11 @@ main footer {
    
 }
 
+body footer a {
+  text-decoration: none;
+  color: #9999ff;
+  text-shadow: 2px 0px 10px #67c5ff;
+}
 
 /* Estilos para los inputs */
 
