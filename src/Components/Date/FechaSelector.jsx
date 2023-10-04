@@ -1,17 +1,31 @@
 import "./Date.css";
 import { iconoFecha } from "/src/variables.js";
 import { Start, Stop } from "../../helpers/Icons";
-import { getToday } from "../../helpers/handleDates";
 import { useRef } from "react";
+import { getToday } from "../../helpers/handleDates";
 
-export const FechaSelector = ({ tipo }) => {
+export const FechaSelector = ({ filter, tipo, fechas, setFechas }) => {
+	const icono = tipo === iconoFecha.Start;
 	const inpDate = useRef();
 
-	const icono = tipo === iconoFecha.Start;
+	const handleFechasChange = () => {
+		const nuevasFechas = { ...fechas };
+		nuevasFechas[tipo] = inpDate.current.value;
+		setFechas(nuevasFechas);
+	};
+
 	return (
 		<label htmlFor={tipo}>
 			{icono ? <Start /> : <Stop />}
-			<input ref={inpDate} name={tipo} type='date' max={getToday()} />
+			<input
+				ref={inpDate}
+				name={tipo}
+				value={fechas[tipo]}
+				type='date'
+				max={getToday()}
+				onChange={handleFechasChange}
+				disabled={filter ? "" : "disabled"}
+			/>
 		</label>
 	);
 };
