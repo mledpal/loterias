@@ -78,3 +78,31 @@ h3 {
   border-radius: 25px;
   background: rgba(255,255,255, .7);
 }
+
+@media screen and (max-width: 1300px) {
+
+  h3 {
+    width: 100%
+  }
+
+  div.bolasContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    margin: 0px;
+  }
+
+  div.estrellas,
+  div.numeros {
+    width: 90%;
+    height: auto;  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+}
