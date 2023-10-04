@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { Formulario, Filtro, MostrarResultados } from "./Components";
+import {
+	Formulario,
+	Filtro,
+	MostrarResultados,
+	MostrarFiltrados,
+} from "./Components";
 
 export const App = () => {
 	const [combinacion, setCombinacion] = useState([]);
+	const [numerosFiltrados, setNumerosFiltrados] = useState([]);
+	const [filter, setFilter] = useState(false);
 
 	return (
 		<>
@@ -11,12 +18,23 @@ export const App = () => {
 			</header>
 
 			<aside>
-				<Formulario setCombinacion={setCombinacion} />
-				<Filtro />
+				<Formulario
+					filter={filter}
+					numerosFiltrados={numerosFiltrados}
+					setCombinacion={setCombinacion}
+				/>
+				<Filtro
+					filter={filter}
+					setFilter={setFilter}
+					setNumerosFiltrados={setNumerosFiltrados}
+				/>
 			</aside>
 
 			<main>
 				<MostrarResultados combinacion={combinacion} />
+				<footer>
+					<MostrarFiltrados numerosFiltrados={numerosFiltrados} />
+				</footer>
 			</main>
 
 			<footer>

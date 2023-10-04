@@ -25,8 +25,13 @@ div.bola.N {
 }
 
 div.bola.E {
-  background-image: radial-gradient(closest-side at 65% 20%, red, #c50000 , #6b0000, #3d0000, black);
+  background-image: radial-gradient(closest-side at 65% 20%, blue, #0000aa, #000f63, #000835, black);
 }
+
+div.bola.U {
+  background-image: radial-gradient(closest-side at 65% 20%, rgb(255, 66, 66), #c50000 , #6b0000, #3d0000, black);
+}
+
 
 div.bola {
   
@@ -62,6 +67,7 @@ div.bola {
 
 h3 {
   position: absolute;
+  margin-top: 25px;
   gap:5px;  
   color: black;
   width: 400px;

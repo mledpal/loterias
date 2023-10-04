@@ -1,6 +1,6 @@
 import { date2Number } from "./handleDates";
 
-export const obtenerDatos = (fechas, sorteo) => {
+export const obtenerDatos = async (fechas, sorteo) => {
 	let resultado = [];
 
 	const fecha_inicio = date2Number(fechas["Start"]);
@@ -8,7 +8,7 @@ export const obtenerDatos = (fechas, sorteo) => {
 
 	const url = `https://ledemar.ddns.net/loterias/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
 
-	fetch(url, {
+	await fetch(url, {
 		method: "GET",
 	})
 		.then((response) => response.json())
@@ -30,7 +30,6 @@ export const obtenerDatos = (fechas, sorteo) => {
 };
 
 const convertir = (combi) => {
-	console.log(combi);
 	const numeros = combi
 		.trim()
 		.replaceAll("-", " ")

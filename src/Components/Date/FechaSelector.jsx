@@ -22,7 +22,7 @@ export const FechaSelector = ({ filter, tipo, fechas, setFechas }) => {
 				name={tipo}
 				value={fechas[tipo]}
 				type='date'
-				max={getToday()}
+				max={getToday(true)}
 				onChange={handleFechasChange}
 				disabled={filter ? "" : "disabled"}
 			/>

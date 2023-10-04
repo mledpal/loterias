@@ -1,8 +1,13 @@
-const getToday = () => {
-	const fechaHoy = new Date();
-	const year = fechaHoy.getFullYear();
-	const month = fechaHoy.getMonth() + 1;
-	const day = fechaHoy.getDate();
+const getToday = (ayer) => {
+	const fecha = new Date();
+
+	if (!ayer) {
+		fecha.setDate(fecha.getDate() - 15);
+	}
+
+	const year = fecha.getFullYear();
+	const month = fecha.getMonth() + 1;
+	const day = fecha.getDate();
 
 	return `${year}-${month < 10 ? "0" + month : month}-${
 		day < 10 ? "0" + day : day
