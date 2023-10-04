@@ -15,7 +15,7 @@ const date2Number = (fecha) => {
 	const month = fechaTransformar.getMonth() + 1;
 	const day = fechaTransformar.getDate();
 
-	return `${year}-${month < 10 ? "0" + month : month}-${
+	return `${year}${month < 10 ? "0" + month : month}${
 		day < 10 ? "0" + day : day
 	}`;
 };
