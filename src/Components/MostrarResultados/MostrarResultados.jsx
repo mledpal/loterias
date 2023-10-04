@@ -19,7 +19,7 @@ export const MostrarResultados = ({ combinacion }) => {
 	} else {
 		return (
 			<h3>
-				Pulse en <span>Generar</span> para empezar
+				Pulse en <span> Generar </span> para empezar
 			</h3>
 		);
 	}
