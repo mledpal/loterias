@@ -21,6 +21,36 @@ div.descartados > h4 {
   z-index: -1;
 }
 
+div.descartados div.bola {
+  cursor: pointer;
+  transform: scale(100%);
+  transform: translateY(0px);
+}
+
+.quitarBola {  
+  animation-name: desaparecer !important;
+  animation-timing-function: ease-in-out;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes desaparecer {
+  from {    
+    opacity: 100%;
+    filter : blur(0px);
+    transform: scale(100%);
+    transform: translateY(0);
+  }
+  to {  
+    opacity: 0;  
+    filter: blur(10px);
+    transform: scale(0%);
+    transform: translateY(-50px);
+  }  
+}
+
+
+
 @media screen and (max-width: 1300px) { 
   div.descartados {
     position: relative;

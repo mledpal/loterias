@@ -41,7 +41,10 @@ export const App = () => {
 				<span></span>
 				<MostrarResultados sorteo={sorteo} combinacion={combinacion} />
 				<footer>
-					<MostrarFiltrados numerosFiltrados={numerosFiltrados} />
+					<MostrarFiltrados
+						setNumerosFiltrados={setNumerosFiltrados}
+						numerosFiltrados={numerosFiltrados}
+					/>
 				</footer>
 			</main>
 
