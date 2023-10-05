@@ -87,7 +87,7 @@ main > span::before {
   background-position: center;
   background-attachment: fixed; 
   z-index: -5;
-  filter: blur(7px);
+  filter: blur(2px);
 }
 
 
@@ -145,29 +145,6 @@ input[type="date"]:enabled:hover {
   transition: .5s;
   background: #67c5ff;
   box-shadow: 0 0 15px 5px #182f3d inset;
-}
-
-div.descartados {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  border-radius: 25px;
-  background: rgba(0,0,0, .5);
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(60px, 1fr) );
-  box-shadow: 2px -4px 10px 3px rgba(255,255,255, .5) inset;
-  place-items: center;
-}
-
-div.descartados > h4 {
-  position: absolute;
-  padding: 20px;  
-  text-align: center;
-  font-size: 5em;
-  color: rgba(255,255,255, .5);
-  text-shadow: 2px 2px 5px rgba(0,0,0, .4);
-  z-index: -1;
 }
 
 @media screen and (max-width: 1300px) {
@@ -239,20 +216,5 @@ div.descartados > h4 {
     padding: 2px;
   }
 
-  div.descartados {
-    position: relative;
-    width: 100%;
-    height: 100%;    
-    border-radius: 25px;
-  }
   
-  div.descartados > h4 {
-    position: absolute;
-    padding: 20px;  
-    text-align: center;
-    font-size: .9em;
-    color: rgba(255,255,255, .5);
-    text-shadow: 2px 2px 5px rgba(0,0,0, .4);
-    z-index: -1;
-  }
 }
