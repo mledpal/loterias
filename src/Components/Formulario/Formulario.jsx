@@ -48,22 +48,6 @@ export const Formulario = ({
 						const otros = generarNumeros(numOtros, 12);
 						const combi = [nums, otros];
 						setCombinacion([nums, otros]);
-
-						if (sorteo === SORTEOS.BONOLOTO) {
-							let segundaApuesta = generarNumeros(
-								numAleatorios,
-								49,
-								filter,
-								numerosFiltrados
-							);
-							let otrosSegundaApuesta = generarNumeros(numOtros, 9);
-							const nuevaCombinacion = [segundaApuesta, otrosSegundaApuesta];
-							const apuestas = [];
-							apuestas.push(combi);
-							apuestas.push(nuevaCombinacion);
-							setCombinacion(apuestas);
-							console.log(apuestas);
-						}
 					}}
 				>
 					Generar

@@ -1,5 +1,4 @@
 import { Bola } from "../Bola/Bola";
-import { SORTEOS } from "../../variables";
 import "./MostrarResultados.css";
 export const MostrarResultados = ({ sorteo, combinacion }) => {
 	if (combinacion.length > 0) {

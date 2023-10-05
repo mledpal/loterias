@@ -65,9 +65,9 @@ div.bola {
   
 }
 
-h3 {
+main h3 {
   position: absolute;
-  margin-top: 25px;
+  margin-top: 150px;
   gap:5px;  
   color: black;
   width: 400px;
@@ -81,7 +81,8 @@ h3 {
 
 @media screen and (max-width: 1300px) {
 
-  h3 {
+  main h3 {
+    margin-top: 25px;
     width: 95%
   }
 
