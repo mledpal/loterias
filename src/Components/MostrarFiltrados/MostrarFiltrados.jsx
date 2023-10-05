@@ -1,4 +1,5 @@
 import { Bola } from "../Bola/Bola";
+import "./MostrarFiltrados.css";
 
 export const MostrarFiltrados = ({ numerosFiltrados }) => {
 	return (
