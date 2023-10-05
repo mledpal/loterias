@@ -16,10 +16,11 @@ activa el filtro y selecciona el rango de fechas cuyos sorteos quieras añadir a
 
 ## Lista de cambios
 
-- Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas. Corrección de errores
+- (5-oct-2023) Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas. Corrección de errores
 
 
 ## Pendiente de hacer
 
 - Captura de errores, sobre todo las de los campos de las fechas
+- Modificación del número máximo que se puede obtener. Actualmente es 49 sin posibilidad de cambio.
 
