@@ -19,9 +19,11 @@ export const MostrarResultados = ({ sorteo, combinacion }) => {
 		);
 	} else {
 		return (
-			<h3>
-				Pulse en <span> Generar </span> para empezar
-			</h3>
+			<div className='bolasContainer'>
+				<h3>
+					Pulse en <span> Generar </span> para empezar
+				</h3>
+			</div>
 		);
 	}
 };

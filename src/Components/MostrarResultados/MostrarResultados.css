@@ -82,15 +82,17 @@ h3 {
 @media screen and (max-width: 1300px) {
 
   h3 {
-    width: 100%
+    width: 95%
   }
 
-  div.bolasContainer {
+  div.bolasContainer {    
+    min-height: 40vh; 
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
     padding: 20px;
-    margin: 0px;
+    margin: 0px;    
   }
 
   div.estrellas,
@@ -99,7 +101,6 @@ h3 {
     height: auto;  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
     align-items: center;
     justify-content: center;
     padding: 10px;
