@@ -2,7 +2,12 @@ import { SORTEOS } from "../../variables";
 import { Dado } from "../../helpers/Icons";
 const sorteos = Object.keys(SORTEOS);
 
-export const Selector = ({ sorteoSeleccionado, setSorteo, filter }) => {
+export const Selector = ({
+	sorteoSeleccionado,
+	setSorteoSeleccionado,
+	setSorteo,
+	filter,
+}) => {
 	return (
 		<label>
 			<Dado />
@@ -11,6 +16,7 @@ export const Selector = ({ sorteoSeleccionado, setSorteo, filter }) => {
 				disabled={filter ? "" : "disabled"}
 				onChange={(e) => {
 					setSorteo(e.target.value);
+					setSorteoSeleccionado(e.target.value);
 				}}
 			>
 				<option value={sorteoSeleccionado}>{sorteoSeleccionado}</option>

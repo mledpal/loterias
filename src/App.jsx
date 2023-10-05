@@ -7,8 +7,11 @@ import {
 	Cabecera,
 } from "./Components";
 
+import { SORTEOS } from "./variables";
+
 export const App = () => {
 	const [combinacion, setCombinacion] = useState([]);
+	const [sorteo, setSorteo] = useState(SORTEOS.EUROMILLONES);
 	const [numerosFiltrados, setNumerosFiltrados] = useState([]);
 	const [filter, setFilter] = useState(false);
 
@@ -23,16 +26,20 @@ export const App = () => {
 					filter={filter}
 					numerosFiltrados={numerosFiltrados}
 					setCombinacion={setCombinacion}
+					setSorteo={setSorteo}
+					sorteo={sorteo}
 				/>
 				<Filtro
 					filter={filter}
 					setFilter={setFilter}
+					setSorteo={setSorteo}
 					setNumerosFiltrados={setNumerosFiltrados}
 				/>
 			</aside>
 
 			<main>
-				<MostrarResultados combinacion={combinacion} />
+				<span></span>
+				<MostrarResultados sorteo={sorteo} combinacion={combinacion} />
 				<footer>
 					<MostrarFiltrados numerosFiltrados={numerosFiltrados} />
 				</footer>

@@ -4,7 +4,9 @@ import { getToday } from "../helpers/handleDates";
 import { obtenerDatos } from "../helpers/getData";
 
 export const useFilter = ({ setNumerosFiltrados }) => {
-	const [sorteoSeleccionado, setSorteo] = useState(SORTEOS.EUROMILLONES);
+	const [sorteoSeleccionado, setSorteoSeleccionado] = useState(
+		SORTEOS.EUROMILLONES
+	);
 	const [sorteosObtenidos, setObtenidos] = useState([]);
 	const [isLoading, setLoading] = useState(false);
 
@@ -44,7 +46,7 @@ export const useFilter = ({ setNumerosFiltrados }) => {
 
 	return {
 		sorteoSeleccionado,
-		setSorteo,
+		setSorteoSeleccionado,
 		sorteosObtenidos,
 		setObtenidos,
 		fechas,

@@ -2,9 +2,20 @@ import { CheckBox, FechaSelector, Selector } from "..";
 import { useFilter } from "../../hooks/useFilter";
 import "./Filtro.css";
 
-export const Filtro = ({ filter, setFilter, setNumerosFiltrados }) => {
-	const { sorteoSeleccionado, setSorteo, fechas, setFechas, handleResSorteos } =
-		useFilter({ setNumerosFiltrados });
+export const Filtro = ({
+	filter,
+	setFilter,
+	setNumerosFiltrados,
+	sorteo,
+	setSorteo,
+}) => {
+	const {
+		sorteoSeleccionado,
+		fechas,
+		setFechas,
+		setSorteoSeleccionado,
+		handleResSorteos,
+	} = useFilter({ setNumerosFiltrados });
 
 	return (
 		<>
@@ -12,7 +23,9 @@ export const Filtro = ({ filter, setFilter, setNumerosFiltrados }) => {
 			<Selector
 				filter={filter}
 				setSorteo={setSorteo}
+				setSorteoSeleccionado={setSorteoSeleccionado}
 				sorteoSeleccionado={sorteoSeleccionado}
+				sorteo={sorteo}
 			/>
 
 			<FechaSelector
