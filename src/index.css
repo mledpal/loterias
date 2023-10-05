@@ -67,13 +67,29 @@ main {
   justify-content: space-between;
   width: 820px;  
   height: 100%;
-  background-image: url('./img/bolas.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;  
+ 
   border-radius: 25px;  
 }
 
+main >span {
+  position: absolute;
+  inset: 5px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+main > span::before {  
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/bolas.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  z-index: -5;
+  filter: blur(7px);
+}
 
 
 body footer {
