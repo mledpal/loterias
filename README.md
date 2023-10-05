@@ -13,7 +13,13 @@ Puedes cambiar la cantidad de números (Máximo 6) y de estrellas o reintegro. (
 Si quieres evitar que genere números que ya han salido en sorteos anteriores,
 activa el filtro y selecciona el rango de fechas cuyos sorteos quieras añadir al filtro
 
-## *Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas*
 
-*Queda pendiente la captura de errores*
+## Lista de cambios
+
+- Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas. Corrección de errores
+
+
+## Pendiente de hacer
+
+- Captura de errores, sobre todo las de los campos de las fechas
 
