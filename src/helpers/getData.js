@@ -1,4 +1,8 @@
 import { date2Number } from "./handleDates";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 export const obtenerDatos = async (fechas, sorteo) => {
 	let resultado = [];
@@ -23,7 +27,11 @@ export const obtenerDatos = async (fechas, sorteo) => {
 			});
 		})
 		.catch((err) => {
-			console.error("caught it!", err);
+			Swal.fire({
+				icon: "error",
+				title: "No hay datos",
+				text: "No se han podido obtener datos. Elija otras fechas.",
+			});
 		});
 
 	return resultado;
