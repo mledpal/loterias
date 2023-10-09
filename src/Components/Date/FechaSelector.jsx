@@ -3,6 +3,10 @@ import { iconoFecha } from "/src/variables.js";
 import { Start, Stop } from "../../helpers/Icons";
 import { useRef } from "react";
 import { getToday } from "../../helpers/handleDates";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 export const FechaSelector = ({ filter, tipo, fechas, setFechas }) => {
 	const icono = tipo === iconoFecha.Start;
@@ -10,8 +14,19 @@ export const FechaSelector = ({ filter, tipo, fechas, setFechas }) => {
 
 	const handleFechasChange = () => {
 		const nuevasFechas = { ...fechas };
-		nuevasFechas[tipo] = inpDate.current.value;
-		setFechas(nuevasFechas);
+
+		const fechaIntroducida = new Date(inpDate.current.value);
+
+		if (tipo === "Stop" && fechaIntroducida < new Date(fechas.Start)) {
+			Swal.fire({
+				icon: "error",
+				title: "Fecha no válida",
+				text: "La fecha de fin no puede ser anterior a la inicial",
+			});
+		} else {
+			nuevasFechas[tipo] = inpDate.current.value;
+			setFechas(nuevasFechas);
+		}
 	};
 
 	return (

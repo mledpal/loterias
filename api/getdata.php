@@ -28,7 +28,7 @@ $url = "https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=" . $
 
 // Se comprueban los datos y si son correctos, se ejecuta la consulta
 // Si no, se devuelve un error
-if (preg_match($datePattern, $fInicio) && preg_match($datePattern, $fFin) && in_array($sorteo, $tipo_sorteo)) {
+if (preg_match($datePattern, $fInicio) && preg_match($datePattern, $fFin) && in_array($sorteo, $tipo_sorteo) && ($fFin >= $fInicio)) {
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
   $output = json_encode(curl_exec($ch));
