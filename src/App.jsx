@@ -5,6 +5,7 @@ import {
 	MostrarResultados,
 	MostrarFiltrados,
 	Cabecera,
+	MostrarSorteos,
 } from "./Components";
 
 import { SORTEOS } from "./variables";
@@ -39,13 +40,19 @@ export const App = () => {
 
 			<main>
 				<span></span>
-				<MostrarResultados sorteo={sorteo} combinacion={combinacion} />
-				<footer>
-					<MostrarFiltrados
-						setNumerosFiltrados={setNumerosFiltrados}
-						numerosFiltrados={numerosFiltrados}
-					/>
-				</footer>
+				<MostrarResultados combinacion={combinacion} />
+				{filter && (
+					<footer>
+						<MostrarFiltrados
+							setNumerosFiltrados={setNumerosFiltrados}
+							numerosFiltrados={numerosFiltrados}
+						/>
+						<MostrarSorteos
+							setNumerosFiltrados={setNumerosFiltrados}
+							numerosFiltrados={numerosFiltrados}
+						/>
+					</footer>
+				)}
 			</main>
 
 			<footer>
