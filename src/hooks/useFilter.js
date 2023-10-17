@@ -15,6 +15,10 @@ export const useFilter = ({ setNumerosFiltrados }) => {
 		Stop: getToday(true),
 	});
 
+	useEffect(() => {
+		localStorage.setItem("sorteos", JSON.stringify([]));
+	}, [sorteoSeleccionado]);
+
 	const handleResSorteos = async () => {
 		setLoading(true);
 		const datos = await obtenerDatos(fechas, sorteoSeleccionado);
@@ -41,6 +45,7 @@ export const useFilter = ({ setNumerosFiltrados }) => {
 	};
 
 	useEffect(() => {
+		localStorage.setItem("sorteos", JSON.stringify(sorteosObtenidos));
 		updateNumerosFiltrados();
 	}, [sorteosObtenidos]);
 

@@ -6,7 +6,6 @@ export const MostrarSorteos = ({ numerosFiltrados, setNumerosFiltrados }) => {
 	const [sorteosFiltrados, setSorteosFiltrados] = useState([]);
 
 	useEffect(() => {
-		console.log("useEffect");
 		setSorteosFiltrados(JSON.parse(localStorage.getItem("sorteos")));
 	}, [numerosFiltrados]);
 

@@ -7,8 +7,10 @@ export const useBola = (setNumerosFiltrados, numerosFiltrados) => {
 		const numero = parseInt(bolaRef.current.innerHTML);
 		const index = numerosFiltrados.indexOf(numero);
 		const nuevoFiltro = [...numerosFiltrados];
-		nuevoFiltro.splice(index, 1);
-		setNumerosFiltrados(nuevoFiltro);
+		if (index >= 0) {
+			nuevoFiltro.splice(index, 1);
+			setNumerosFiltrados(nuevoFiltro);
+		}
 	};
 
 	const handleClick = (e) => {

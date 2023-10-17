@@ -7,6 +7,7 @@ export const CheckBox = ({ filter, setFilter }) => {
 				name='chkFilter'
 				onChange={() => {
 					setFilter(!filter);
+					localStorage.setItem("sorteos", JSON.stringify([]));
 				}}
 				checked={filter ? "checked" : ""}
 			/>
