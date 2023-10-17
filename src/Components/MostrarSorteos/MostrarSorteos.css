@@ -1,0 +1,44 @@
+div.sorteos {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  border-radius: 25px;
+  background: rgba(0,0,0, .5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px -4px 10px 3px rgba(255,255,255, .5) inset;  
+}
+
+div.sorteos > h4 {
+  position: absolute;
+  padding: 20px;  
+  text-align: center;
+  font-size: 5em;
+  color: rgba(255,255,255, .5);
+  text-shadow: 2px 2px 5px rgba(0,0,0, .4);
+  z-index: -1;
+}
+
+div.sorteos div.datosSorteo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+div.datosSorteo span.fechaSorteo {
+  font-weight: 600;
+  display:grid;  
+  place-content: center;  
+  border-radius: 10px;
+  width:10ch;
+  height: 30px;
+}
+
+div.datosSorteo:nth-child(even) {
+  background: rgba(255,255,255, .2);
+}

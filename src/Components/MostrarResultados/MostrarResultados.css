@@ -20,51 +20,6 @@ div.numeros {
 }
 
 
-div.bola.N {
-  background-image: radial-gradient(closest-side at 65% 20%, white, #888 , #333, #222, black);
-}
-
-div.bola.E {
-  background-image: radial-gradient(closest-side at 65% 20%, blue, #0000aa, #000f63, #000835, black);
-}
-
-div.bola.U {
-  background-image: radial-gradient(closest-side at 65% 20%, rgb(255, 66, 66), #c50000 , #6b0000, #3d0000, black);
-}
-
-
-div.bola {
-  
-  display: inline-block;
-  padding: 10px;
-  margin: 5px;
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: -2px 3px 10px 2px rgba(255,255,255, .7);
-  font-weight: 600;
-  color: rgba(255,255,255, .8);
-  animation-name: mostrarBola;
-  animation-duration: .3s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes mostrarBola {
-  from {
-    opacity: 0;
-    filter:blur(3px);
-    transform: translateX(-10px)
-  }
-
-  to {
-    opacity: 1;
-    filter:blur(0);
-    transform: translateX(0px);
-  }
-  
-}
-
 main h3 {
   position: absolute;
   margin-top: 150px;
