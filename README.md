@@ -16,7 +16,9 @@ activa el filtro y selecciona el rango de fechas cuyos sorteos quieras añadir a
 
 ## Lista de cambios
 
-- (5-oct-2023) Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas. Corrección de errores
+- (17-oct-2023) Al obtener los números descartados, aparecen también los sorteos que se jugaron entre las fechas elegidas, pudiendo ver las combinaciones ganadoras de esos días. También se ha hecho una mejor adaptación a dispositivos móviles.
+
+- (5-oct-2023) Ahora se pueden eliminar las bolas de los números descartados haciendo click sobre ellas. Corrección de errores.
 
 
 ## Pendiente de hacer
