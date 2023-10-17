@@ -1,4 +1,5 @@
 import { useBola } from "../../hooks/useBola";
+import "./Bola.css";
 
 export const Bola = ({ num, tipo, setNumerosFiltrados, numerosFiltrados }) => {
 	const { bolaRef, handleClick } = useBola(
