@@ -186,7 +186,6 @@ input[type="date"]:enabled:hover {
 
   main {  
     justify-content: flex-start;
-
     width: 100%;  
     min-height: 90vh;
     padding: 20px;    
@@ -194,17 +193,16 @@ input[type="date"]:enabled:hover {
   }
   
   main footer {
-    position:relative;
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(45px, 1fr) );
-    gap: 5px;    
-    bottom: 0;
+    position:relative;    
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;    
+    top: 0px;
     max-width: 90vw;
     width: 100%;    
     min-height: 50vh;
     height: auto;
-    z-index: 100;   
-    overflow: scroll;
+    z-index: 100;       
   }
 
   body footer {    

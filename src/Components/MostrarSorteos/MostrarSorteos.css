@@ -42,3 +42,29 @@ div.datosSorteo span.fechaSorteo {
 div.datosSorteo:nth-child(even) {
   background: rgba(255,255,255, .2);
 }
+
+@media screen and (max-width: 1300px) {
+  div.sorteos {       
+    min-height: 20vh; 
+    gap: 5vh;  
+  }
+
+  div.sorteos div.datosSorteo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;    
+  }
+
+  div.sorteos div.datosSorteo span.fechaSorteo {
+    font-size: 1.8em;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  div.sorteos > h4 {
+    position:absolute;
+    font-size: 2em;   
+  }
+
+
+}
