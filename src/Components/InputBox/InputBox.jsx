@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Numbers, Otros } from "../../helpers/Icons";
 
-export const InputBox = ({ valor = 6, min = 1, max = 6, tipo, setValor }) => {
+export const InputBox = ({ valor = 6, min = 0, max = 8, tipo, setValor }) => {
 	const inputRef = useRef();
 
 	return (

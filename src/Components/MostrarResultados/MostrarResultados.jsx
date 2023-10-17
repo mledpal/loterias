@@ -1,6 +1,6 @@
 import { Bola } from "../Bola/Bola";
 import "./MostrarResultados.css";
-export const MostrarResultados = ({ sorteo, combinacion }) => {
+export const MostrarResultados = ({ combinacion }) => {
 	if (combinacion.length > 0) {
 		return (
 			<div className='bolasContainer'>

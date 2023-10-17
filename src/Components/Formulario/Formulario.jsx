@@ -20,13 +20,16 @@ export const Formulario = ({
 				setOtros(2);
 				break;
 			}
-			case SORTEOS.BONOLOTO:
 			case SORTEOS.PRIMITIVA:
 			case SORTEOS.ELGORDO: {
 				setNumeros(6);
-				setOtros(1);
+				setOtros(0);
 				break;
 			}
+			case SORTEOS.BONOLOTO:
+				setNumeros(6);
+				setOtros(0);
+				break;
 		}
 	}, [sorteo]);
 
