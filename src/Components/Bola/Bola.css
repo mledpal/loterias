@@ -11,8 +11,7 @@ div.bola.U {
 }
 
 
-div.bola {
-  
+div.bola {  
   display: inline-block;
   padding: 10px;
   margin: 5px;
@@ -26,6 +25,7 @@ div.bola {
   animation-name: mostrarBola;
   animation-duration: .3s;
   animation-timing-function: ease-in-out;
+  cursor:pointer;
 }
 
 @keyframes mostrarBola {
