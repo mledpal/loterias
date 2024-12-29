@@ -10,10 +10,16 @@ export const obtenerDatos = async (fechas, sorteo) => {
 	const fecha_inicio = date2Number(fechas["Start"]);
 	const fecha_fin = date2Number(fechas["Stop"]);
 
-	const url = `https://ledemar.ddns.net/loterias/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
+	const url = `https://loterias.ledemar.es/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
+	console.log(url);
 
 	await fetch(url, {
 		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			"cors": "no-cors",
+			"Access-Control-Allow-Origin": "*",
+		},
 	})
 		.then((response) => response.json())
 		.then((data) => {
@@ -38,11 +44,7 @@ export const obtenerDatos = async (fechas, sorteo) => {
 };
 
 const convertir = (combi) => {
-	const numeros = combi
-		.trim()
-		.replaceAll("-", " ")
-		.replaceAll("  ", "")
-		.split(" ");
+	const numeros = combi.trim().replaceAll("-", " ").replaceAll("  ", "").split(" ");
 
 	const combinacion = numeros.map((n) => {
 		if (n.charAt(0) == "C") return parseInt(n.slice(2, 4));
