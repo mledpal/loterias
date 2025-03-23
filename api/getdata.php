@@ -28,7 +28,7 @@ if (
   in_array($sorteo, $tipo_sorteo) &&
   ($fFin >= $fInicio)
 ) {
-  $url = "https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id={$sorteo}&celebrados=true&fechaInicioInclusiva={$fInicio}&fechaFinInclusiva={$fFin}";
+  $url = "https://www.loteriasyapuestas.es/servicios/buscadorSorteos?sorteo={$sorteo}&celebrados=true&fechaInicioInclusiva={$fInicio}&fechaFinInclusiva={$fFin}";
 
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
