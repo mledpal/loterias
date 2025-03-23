@@ -11,14 +11,11 @@ export const obtenerDatos = async (fechas, sorteo) => {
 	const fecha_fin = date2Number(fechas["Stop"]);
 
 	const url = `https://loterias.ledemar.es/api/getdata.php?fInicio=${fecha_inicio}&fFin=${fecha_fin}&sorteo=${sorteo}`;
-	console.log(url);
 
 	await fetch(url, {
-		method: "GET",
+		method: "GET",		
 		headers: {
 			"Content-Type": "application/json",
-			"cors": "no-cors",
-			"Access-Control-Allow-Origin": "*",
 		},
 	})
 		.then((response) => response.json())
