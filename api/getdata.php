@@ -5,6 +5,11 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+  // Terminamos aquí, solo necesitamos responder a la solicitud OPTIONS
+  exit(0);
+}
+
 // Definir tipos de sorteo permitidos
 $tipo_sorteo = ['BONO', 'EMIL', 'LOTU', 'LAPR', 'ELGR', 'LAQU', 'QGOL', 'QUPL', 'LNAC', 'TODOS'];
 $datePattern = "/^\d{8}$/";
