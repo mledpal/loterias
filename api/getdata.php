@@ -1,21 +1,19 @@
 <?php
-
-// Cabeceras 
-header("Access-Control-Allow-Origin: http://localhost:5173");
-header("Access-Control-Allow-Methods: GET, PUT");
+// Permitir CORS desde el cliente
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Max-Age: 3600");
+header("Content-Type: application/json");
 
 // Patrones y valores para hacer comprobaciones
 $tipo_sorteo = ['BONO', 'EMIL', 'LOTU', 'LAPR', 'ELGR', 'LAQU', 'QGOL', 'QUPL', 'LNAC', 'TODOS'];
 $datePattern = "/^\d{8}$/";
 
-// Datos obtenidos mediante GET del cliente API
-$fInicio = $_GET['fInicio'];
-$fFin = $_GET['fFin'];
-$sorteo = $_GET['sorteo'];
+// Datos obtenidos mediante GET
+$fInicio = $_GET['fInicio'] ?? null;
+$fFin = $_GET['fFin'] ?? null;
+$sorteo = $_GET['sorteo'] ?? null;
 
-// Construcción del mensaje de error con los valores obtenidos
 $error = [
   'error' => 'Algún dato no es correcto',
   'fInicio' => $fInicio,
@@ -23,16 +21,34 @@ $error = [
   'sorteo' => $sorteo
 ];
 
-// Construcción de la variable url para acceder a la API de la web de loterias
-$url = "https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id=" . $sorteo . "&celebrados=true&fechaInicioInclusiva=" . $fInicio . "&fechaFinInclusiva=" . $fFin;
+// Validación de datos
+if (
+  preg_match($datePattern, $fInicio) &&
+  preg_match($datePattern, $fFin) &&
+  in_array($sorteo, $tipo_sorteo) &&
+  ($fFin >= $fInicio)
+) {
+  $url = "https://www.loteriasyapuestas.es/servicios/buscadorSorteos?game_id={$sorteo}&celebrados=true&fechaInicioInclusiva={$fInicio}&fechaFinInclusiva={$fFin}";
 
-// Se comprueban los datos y si son correctos, se ejecuta la consulta
-// Si no, se devuelve un error
-if (preg_match($datePattern, $fInicio) && preg_match($datePattern, $fFin) && in_array($sorteo, $tipo_sorteo) && ($fFin >= $fInicio)) {
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
-  $output = json_encode(curl_exec($ch));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Para obtener el resultado como string
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Si hay problema con SSL
+  curl_setopt($ch, CURLOPT_TIMEOUT, 10); // Timeout de 10 segundos
+
+  $output = curl_exec($ch);
+  $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  $error = curl_error($ch);
+
   curl_close($ch);
+
+  if ($http_status === 200 && $output !== false) {
+    echo $output; // Devuelve directamente el JSON
+  } else {
+    http_response_code($http_status ?: 500);
+    echo json_encode(['error' => $error ?: 'Error en la solicitud externa']);
+  }
 } else {
+  http_response_code(400);
   echo json_encode($error);
 }
