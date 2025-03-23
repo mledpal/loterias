@@ -31,13 +31,23 @@ if (
   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
   curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 
-  // Simular un navegador para evitar bloqueos
+  // Establecer encabezados HTTP (simulando un navegador)
   curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Accept: application/json",
-    "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Referer: https://www.loteriasyapuestas.es",
-    "Accept-Encoding: gzip, deflate, br",
-    "Accept-Language: es-ES,es;q=0.9,en;q=0.8"
+    "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6,fr;q=0.5,ca;q=0.4",
+    "Cache-Control: max-age=0",
+    "DNT: 1",
+    "Priority: u=0, i",
+    "Sec-CH-UA: \"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Microsoft Edge\";v=\"134\"",
+    "Sec-CH-UA-Mobile: ?0",
+    "Sec-CH-UA-Platform: \"Windows\"",
+    "Sec-Fetch-Dest: document",
+    "Sec-Fetch-Mode: navigate",
+    "Sec-Fetch-Site: none",
+    "Sec-Fetch-User: ?1",
+    "Upgrade-Insecure-Requests: 1",
+    "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0",
+    "Cookie: usr-lang=es; UUID=WEB-7ca145c7-d5a4-460c-ab82-b4a1a8de8af8; CookieConsent={stamp:%27bwQeh4hG1wJT0Xp06hZ6WArB3LHWpmE2OlPYInl+Z2iJm3uHIkDHPQ==%27%2Cnecessary:true%2Cpreferences:false%2Cstatistics:false%2Cmarketing:false%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1742737115211%2Cregion:%27es%27}; cms=APRrJYF7b8HCVQ5IoSW7RQ$$"
   ]);
 
   // Ejecutar la solicitud cURL
